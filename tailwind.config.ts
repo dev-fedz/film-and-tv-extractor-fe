@@ -1,20 +1,47 @@
-import type { Config } from "tailwindcss";
+/** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme');
 
-const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+module.exports = {
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
+        primary: '#202465',
+        secondary: '#CF0000',
+        'dark-primary': '#111026',
+        'dark-secondary': '#595977',
+        light: '#A2A2C2',
+        notif: '#FF808B', // use danger instead
+        success: '#80D592',
+        danger: '#FF808B',
+        divider: '#DDDAFE',
+        disabled: '#585DA1'
       },
     },
+    screens: {
+      sm: '640px',
+      // => @media (min-width: 640px) { ... }
+
+      md: '768px',
+      // => @media (min-width: 768px) { ... }
+
+      lg: '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      xl: '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
+    },
   },
-  plugins: [],
+  safelist: [
+    {
+      pattern: /^p-.*/,
+    },
+  ],
+  plugins: [require('@tailwindcss/forms')({ strategy: 'class' })],
 };
-export default config;

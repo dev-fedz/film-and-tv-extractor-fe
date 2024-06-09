@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #f8f9ff;
+    overflow-x: hidden;
+  }
+  label {
+    @apply text-xs lg:text-sm;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn-base {
+    @apply min-w-[197px] py-4 rounded-md border-2;
+    @apply font-bold text-white text-center text-sm hover:opacity-90 active:opacity-95;
+  }
+  .btn-primary {
+    @apply btn-base bg-primary border-primary;
+  }
+  
+  .btn-add {
+    @apply btn-base bg-primary border-primary;
+  }
+
+  .btn-table-primary {
+    @apply rounded-[6px];
+    @apply text-white bg-primary text-center hover:opacity-90 active:opacity-95 px-2 py-1;
+  }
+  
+  .btn-table-outline-primary {
+    @apply rounded-[6px];
+    @apply border-2 border-primary text-primary hover:opacity-90 active:opacity-95 px-2 py-1;
+  }
+  
+  .btn-table-secondary {
+    @apply rounded-[6px];
+    @apply text-white bg-secondary text-center hover:opacity-90 active:opacity-95 px-2 py-1;
+  }
+
+  .btn-table-with-icon {
+    @apply flex items-center;
+  }
+  
+  .btn-outline-secondary {
+    @apply btn-base border-2 border-secondary text-secondary;
+  }
+
+
+  /* Cards */
+  .card-auth {
+    background-color: rgba(255, 255, 255, 0.1);
+    @apply border-[1px] border-white rounded-[20px] backdrop-blur-2xl bg-blend-overlay;
+    @apply flex flex-col items-center gap-6;
+    @apply px-12 py-10 sm:w-[640px] md:w-[640px] lg:w-[457px];
+  }
+  
+  .card-base {
+    @apply bg-white border-[1px] border-[#bfbfc2] rounded-[18px];
+  }
+  .card {
+    @apply card-base px-10 py-[30px];
+  }
+  .card-slim {
+    @apply card-base px-6 py-[25px];
+  }
+
+  .card-title {
+    @apply font-bold text-xl text-dark-secondary;
+  }
+
+
+  /*Forgot Password Calendar End*/
+  .password-input {
+    @apply form-input rounded-[10px] focus:border-secondary focus:ring-secondary bg-transparent p-5 border-none h-12;
+  }
+
+  .password-input:focus {
+    outline-offset: 0;
+    --tw-ring-shadow: 0 !important;
+  }
+
+
+  /* Form */
+  .form-input-base {
+    @apply form-input w-full rounded-[10px] focus:border-primary focus:ring-primary;
+  }
+  
+  .form-input-half-radius-l {
+    @apply form-input w-full rounded-l-lg focus:border-primary focus:ring-primary;
+  }
+
+  .form-input-base-dark {
+    @apply form-input w-full rounded-[10px] focus:border-primary focus:ring-primary;
+  }
+
+  .form-input-primary {
+    @apply form-input text-dark-secondary font-medium border-divider rounded-[10px];
+    @apply focus:border-primary focus:ring-primary;
+  }
+
+  .form-input-search {
+    @apply form-input-primary form-input-half-radius-l;
+  }
+
+  .form-input-auth {
+    @apply form-input-base  text-white font-medium border-white h-12;
+    @apply py-5 px-6;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  
+  /* Table */
+  .table-base {
+    @apply border-collapse text-xs table-fixed;
+    @apply bg-white;
+  }
+
+  .table-heading {
+    @apply table-base text-left px-3;
+    @apply bg-primary text-white py-4;
+  }
+
+  .table-row {
+    @apply table-base bg-[#F4F3FE];
+    @apply text-left text-[#595977] text-sm px-4;
+  }
+
+  .table-base-striped tbody tr:nth-of-type(even) > td {
+    @apply bg-[#FFFFFF];
+  }
+
+  .table-cell {
+    @apply table-row py-3;
+  }
+
+
+
+  /* Alert */
+  .alert-error {
+    @apply w-full bg-danger px-3 py-1 rounded-lg;
+    @apply flex gap-1.5 items-center;
+  }
+
+}
+@layer utilities {
+  .auth-wrapper {
+    @apply flex flex-col lg:flex-row gap-8 xl:gap-32 w-screen h-screen;
+    @apply lg:px-14 xl:px-36 2xl:px-60 items-center justify-center;
+    @apply bg-center bg-cover bg-no-repeat;
+    background-color: #00000070;
+  }
+}
+
+  /* Container */
+  .container {
+    @apply px-8 py-3;
+  }
+
+  .custom-dropdown {
+    border: 1px solid #acacac;
+  }
